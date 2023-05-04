@@ -119,6 +119,7 @@ try {
   const pool = await getConnection();
   await pool
     .request()
+    .input("id", req.params.id)
     .input("nombre", sql.VarChar, nombre)
     .input("cedula", sql.VarChar, cedula)
     .input("telefono", sql.VarChar, telefono)
